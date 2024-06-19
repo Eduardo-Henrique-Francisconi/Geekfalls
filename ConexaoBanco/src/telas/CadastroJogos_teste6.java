@@ -1,5 +1,11 @@
 package telas;
 
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import dao.Buscar;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,12 +15,12 @@ package telas;
  *
  * @author duduh
  */
-public class CadastroJogos extends javax.swing.JFrame {
+public class CadastroJogos_teste6 extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroJogos
      */
-    public CadastroJogos() {
+    public CadastroJogos_teste6() {
         initComponents();
     }
 
@@ -45,43 +51,25 @@ public class CadastroJogos extends javax.swing.JFrame {
         status = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+         // Cria uma nova janela
+         JFrame frame = new JFrame("Exemplo JTable");
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         frame.setSize(500, 300);
+ 
+         // Cria a JTable
+         JTable jTable1 = new JTable();
+ 
+         // Define os dados da tabela
+         Object[][] dados = new Buscar().buscarJogos();
+ 
+         // Define os nomes das colunas
+         String[] colunas = {"id", "nome", "preço", "descrição", "idade minima", "tempo de jogo", "numero de jogadores", "genero", "status"};
+ 
+         // Cria o modelo de tabela com os dados e as colunas
+         DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID jogo", "Nome", "Preço", "Descrição", "Idade Minima", "Tempo de jogo", "Nº de jogadores", "Genero", "status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        jTable1.setModel(modeloTabela);
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("ID jogo");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Nome");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Preço");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Descrição");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Idade Minima");
-            jTable1.getColumnModel().getColumn(5).setHeaderValue("Tempo de jogo");
-            jTable1.getColumnModel().getColumn(6).setHeaderValue("Nº de jogadores");
-            jTable1.getColumnModel().getColumn(7).setHeaderValue("Genero");
-            jTable1.getColumnModel().getColumn(8).setHeaderValue("status");
-        }
 
         jTextField1.setText("ID jogo");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -317,20 +305,21 @@ public class CadastroJogos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroJogos().setVisible(true);
+                new CadastroJogos_teste6().setVisible(true);
             }
         });
     }

@@ -10,7 +10,7 @@ public class ConexaoBanco {
     private Connection conexao;   
     public ConexaoBanco() {
         this.servidor = "200.195.171.122";
-        this.banco = "grupo10_mensalBúrigo";
+        this.banco = "grupo10_GeekFalls";
         this.usuario = "grupo10";
         this.senha = "gopMi1PKCuJpaB29";
     }

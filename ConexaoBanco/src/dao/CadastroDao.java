@@ -11,11 +11,11 @@ import modelo.Cadastro;
 
 public class CadastroDao implements DaoGenerica<Cadastro>{
 
-    private ConexaoBanco conexao;
+    private ConexaoBancoteste conexao;
     
     public CadastroDao()
     {
-        this.conexao = new ConexaoBanco();
+        this.conexao = new ConexaoBancoteste();
     }
     
     @Override
