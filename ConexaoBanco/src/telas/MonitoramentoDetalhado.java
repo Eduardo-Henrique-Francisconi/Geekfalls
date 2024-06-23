@@ -2,6 +2,9 @@ package telas;
 
 
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import dao.Buscar;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
