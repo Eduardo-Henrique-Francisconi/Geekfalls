@@ -30,9 +30,11 @@ public class Enviar {
         String[] generos = Genero.replace("[", "").replace("]", "").split(", ");
         
         try {
+
             if (conexaoBanco.conectar()) {
-                JOptionPane.showMessageDialog(null, "Banco de dados conectado");
+                
             }
+           
         } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
@@ -75,7 +77,7 @@ public class Enviar {
             }
         }
 
-
+        JOptionPane.showMessageDialog(null, "Envio realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
     }
     

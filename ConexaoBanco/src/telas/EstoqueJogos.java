@@ -19,12 +19,12 @@ import dao.Excluir;
  *
  * @author duduh
  */
-public class CadastroJogos_teste6 extends javax.swing.JFrame {
+public class EstoqueJogos extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroJogos
      */
-    public CadastroJogos_teste6() {
+    public EstoqueJogos() {
         initComponents();
     }
 
@@ -39,7 +39,7 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
     Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
  
          // Define os nomes das colunas
-         String[] colunas = {"id", "nome", "descrição", "players", "preço", "status", "tempo", "idade", "genero"}; // "ID_game", "ID_genre
+         String[] colunas = {"id", "nome", "descrição", "preço", "tempo em Min", "status", "idade", "players", "genero"}; // "ID_game", "ID_genre
  
          // Cria o modelo de tabela com os dados e as colunas
          DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
@@ -65,9 +65,6 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
         jTextPreco = new javax.swing.JTextField();
         jButtonAdicionar = new javax.swing.JButton();
         jButtonAlterar = new javax.swing.JButton();
-        jButtonExcluir = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         status = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jListGenero = new javax.swing.JList<>();
@@ -75,6 +72,17 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
         jToggleAdd = new javax.swing.JToggleButton();
         jToggleLimpar = new javax.swing.JToggleButton();
         jTextID = new javax.swing.JTextField();
+        jButtonExcluir1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,39 +160,6 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
             }
         });
 
-        jButtonExcluir.setText("Excluir");
-        jButtonExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonExcluirMouseClicked(evt);
-            }
-        });
-        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExcluirActionPerformed(evt);
-            }
-        });
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel1.setText("Cadastro de Jogos");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "disponível", "alugado", "manutenção" }));
         status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,12 +186,45 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
             }
         });
 
+        jTextID.setEditable(false);
         jTextID.setText("ID");
         jTextID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIDActionPerformed(evt);
             }
         });
+
+        jButtonExcluir1.setText("Excluir");
+        jButtonExcluir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonExcluir1MouseClicked(evt);
+            }
+        });
+        jButtonExcluir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluir1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Nome:");
+
+        jLabel2.setText("Descrição:");
+
+        jLabel3.setText("Preço:");
+
+        jLabel4.setText("Idade minima:");
+
+        jLabel5.setText("Generos:");
+
+        jLabel6.setText("Numero de jogadores:");
+
+        jLabel7.setText("Generos adicionados:");
+
+        jLabel8.setText("status:");
+
+        jLabel9.setText("ID");
+
+        jLabel10.setText("Tempo de jogo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,43 +234,84 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextNome)
+                            .addComponent(jTextNumero)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 2, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextID, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(156, 156, 156)
-                        .addComponent(jToggleLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextDescricao)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jTextTempo)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 2, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(98, 98, 98))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(status, 0, 148, Short.MAX_VALUE)
+                                    .addComponent(jTextPreco)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonAdicionar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonExcluir)
-                        .addGap(343, 343, 343)
-                        .addComponent(jScrollPane3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonExcluir1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextID)
+                                    .addComponent(jTextIdade))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(108, 108, 108)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(jLabel7)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jToggleLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                                    .addComponent(jToggleAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -273,24 +322,29 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
                     .addComponent(jToggleAdd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleLimpar)
-                    .addComponent(jTextID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonAdicionar)
                             .addComponent(jButtonAlterar)
-                            .addComponent(jButtonExcluir)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addComponent(jButtonExcluir1)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -327,10 +381,6 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
     private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAlterarActionPerformed
-
-    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
         // TODO add your handling code here:
@@ -376,22 +426,34 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
 
     private void jButtonAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAlterarMouseClicked
         // TODO add your handling code here:
-        //pegando os valores dos campos de texto e enviando para o banco de dados
-        Alterar.alterarJogo(jTextID.getText(), jTextNome.getText(), jTextDescricao.getText(), jTextPreco.getText(), jTextIdade.getText(), jTextTempo.getText(), jTextNumero.getText(), status.getSelectedItem().toString(), modelGenero.toString());
+        //perguntando se o usuario tem certeza que deseja alterar
+        int resposta = javax.swing.JOptionPane.showConfirmDialog(null, "Tem certeza que deseja alterar?", "Alterar", javax.swing.JOptionPane.YES_NO_OPTION);
+    
+        if (resposta == javax.swing.JOptionPane.YES_OPTION) {
+            //pegando os valores dos campos
+            String ID_game = jTextID.getText();
+            String Game_name = jTextNome.getText();
+            String Game_description = jTextDescricao.getText();
+            String Game_price = jTextPreco.getText();
+            String Game_age = jTextIdade.getText();
+            String Game_time = jTextTempo.getText();
+            String Game_player_quantity = jTextNumero.getText();
+            String Game_status = status.getSelectedItem().toString();
+            String Genero = modelGenero.toString();
+            //enviando para o banco de dados
+            Alterar.alterarJogo(ID_game, Game_name, Game_description, Game_price, Game_age, Game_time, Game_player_quantity, Game_status, Genero);
+            //atualizando tabela
+            Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+            DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    // Retorna false para tornar todas as células não editáveis
+                    return false;
+                }
+            };
 
-        //atualizando tabela
-        Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
-
-        DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                // Retorna false para tornar todas as células não editáveis
-                return false;
-            }
-        };
-
-        jTable1.setModel(modeloTabela);
-
+            jTable1.setModel(modeloTabela);
+        }
 
     }//GEN-LAST:event_jButtonAlterarMouseClicked
 
@@ -434,15 +496,35 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextIDActionPerformed
 
-    private void jButtonExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonExcluirMouseClicked
+    private void jButtonExcluir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonExcluir1MouseClicked
         // TODO add your handling code here:
+        //perguntando se o usuario tem certeza que deseja excluir
+        int resposta = javax.swing.JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir?", "Excluir", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (resposta == javax.swing.JOptionPane.YES_OPTION) {
+            //pegando o id do jogo selecionado
+            String ID_game = jTextID.getText();
+            //enviando para o banco de dados
+            Excluir.excluirJogo(ID_game);
+            //atualizando tabela
+            Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+            DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    // Retorna false para tornar todas as células não editáveis
+                    return false;
+                }
+            };
 
-        //pegando o id do campo de texto e excluindo o jogo do banco de dados e generos
-        Excluir.excluirJogo(jTextID.getText());
+            jTable1.setModel(modeloTabela);
+        }
 
+        
 
+    }//GEN-LAST:event_jButtonExcluir1MouseClicked
 
-    }//GEN-LAST:event_jButtonExcluirMouseClicked
+    private void jButtonExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonExcluir1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -461,21 +543,23 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstoqueJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstoqueJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstoqueJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroJogos_teste6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstoqueJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroJogos_teste6().setVisible(true);
+                new EstoqueJogos().setVisible(true);
             }
         });
     }
@@ -483,10 +567,18 @@ public class CadastroJogos_teste6 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionar;
     private javax.swing.JButton jButtonAlterar;
-    private javax.swing.JButton jButtonExcluir;
+    private javax.swing.JButton jButtonExcluir1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jListGenero;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;

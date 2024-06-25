@@ -29,10 +29,11 @@ public class Buscar {
         String queryGenero = "SELECT ID_Genero, Genero FROM Genero";
         
         try {
-            
+
             if (conexaoBanco.conectar()) {
-                JOptionPane.showMessageDialog(null, "Banco de dados conectadoBUSCAR TESTE");
+                
             }
+            
         } catch(HeadlessException ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", ERROR_MESSAGE);
         }

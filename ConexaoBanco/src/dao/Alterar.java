@@ -25,9 +25,11 @@ public class Alterar {
         String[] generos = Genero.replace("[", "").replace("]", "").split(", ");
 
         try {
+
             if (conexaoBanco.conectar()) {
-                JOptionPane.showMessageDialog(null, "Banco de dados conectado");
+                
             }
+
         } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
@@ -66,7 +68,7 @@ public class Alterar {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
+        JOptionPane.showMessageDialog(null, "Alteração realizada com sucesso!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
     }
         
 

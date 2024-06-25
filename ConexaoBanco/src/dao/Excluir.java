@@ -22,9 +22,11 @@ public class Excluir {
         String queryGenero = "DELETE FROM Genero WHERE ID_Genero = ?";
 
         try {
+
             if (conexaoBanco.conectar()) {
-                JOptionPane.showMessageDialog(null, "Banco de dados conectado");
+                
             }
+            
         } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
@@ -44,6 +46,8 @@ public class Excluir {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro inesperado:\n" + ex.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
+        
+        JOptionPane.showMessageDialog(null, "Exclusão realizada com sucesso!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
     }
     
 }
