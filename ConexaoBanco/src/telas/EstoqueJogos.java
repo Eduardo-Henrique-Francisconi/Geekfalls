@@ -9,6 +9,7 @@ import dao.Buscar;
 import dao.Enviar;
 import dao.Alterar;
 import dao.Excluir;
+import javax.swing.WindowConstants;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -36,7 +37,7 @@ public class EstoqueJogos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     DefaultListModel<String> modelGenero = new DefaultListModel<>();
-    Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+    Object[][] dados = new Buscar().buscarJogos();
  
          // Define os nomes das colunas
          String[] colunas = {"id", "nome", "descrição", "preço", "tempo em Min", "status", "idade", "players", "genero"}; // "ID_game", "ID_genre
@@ -49,6 +50,10 @@ public class EstoqueJogos extends javax.swing.JFrame {
                 return false;
             }
         };
+
+    EstoqueJogos(Tela_Inicial aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
          
     
@@ -392,7 +397,7 @@ public class EstoqueJogos extends javax.swing.JFrame {
         Enviar.enviarParaServidor(jTextNome.getText(), jTextDescricao.getText(), jTextPreco.getText(), jTextIdade.getText(), jTextTempo.getText(), jTextNumero.getText(), status.getSelectedItem().toString(), modelGenero.toString());
 
         //atualizando tabela
-        Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+        Object[][] dados = new Buscar().buscarJogos();
         DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -443,7 +448,7 @@ public class EstoqueJogos extends javax.swing.JFrame {
             //enviando para o banco de dados
             Alterar.alterarJogo(ID_game, Game_name, Game_description, Game_price, Game_age, Game_time, Game_player_quantity, Game_status, Genero);
             //atualizando tabela
-            Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+            Object[][] dados = new Buscar().buscarJogos();
             DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
                 @Override
                 public boolean isCellEditable(int row, int column) {
@@ -465,11 +470,12 @@ public class EstoqueJogos extends javax.swing.JFrame {
         jTextID.setText(jTable1.getValueAt(linha, 0).toString());
         jTextNome.setText(jTable1.getValueAt(linha, 1).toString());
         jTextDescricao.setText(jTable1.getValueAt(linha, 2).toString());
-        jTextPreco.setText(jTable1.getValueAt(linha, 4).toString());
-        jTextIdade.setText(jTable1.getValueAt(linha, 7).toString());
-        jTextTempo.setText(jTable1.getValueAt(linha, 6).toString());
-        jTextNumero.setText(jTable1.getValueAt(linha, 3).toString());
+        jTextPreco.setText(jTable1.getValueAt(linha, 3).toString());
+        jTextTempo.setText(jTable1.getValueAt(linha, 4).toString());
         status.setSelectedItem(jTable1.getValueAt(linha, 5).toString());
+        jTextIdade.setText(jTable1.getValueAt(linha, 6).toString());
+        jTextNumero.setText(jTable1.getValueAt(linha, 7).toString());
+        
         modelGenero.clear();
         //add generos a jListGenero separando por virgula retirando os colchetes e espaços
         String[] generos = jTable1.getValueAt(linha, 8).toString().replace("[", "").replace("]", "").split(", ");
@@ -477,7 +483,7 @@ public class EstoqueJogos extends javax.swing.JFrame {
             modelGenero.addElement(genero);
         }
         //atualizando tabela
-        Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+        Object[][] dados = new Buscar().buscarJogos();
         DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -506,7 +512,7 @@ public class EstoqueJogos extends javax.swing.JFrame {
             //enviando para o banco de dados
             Excluir.excluirJogo(ID_game);
             //atualizando tabela
-            Object[][] dados = new Buscar().buscarJogos(0,1,2,3,4,5,6,7,8);
+            Object[][] dados = new Buscar().buscarJogos();
             DefaultTableModel modeloTabela = new DefaultTableModel(dados, colunas) {
                 @Override
                 public boolean isCellEditable(int row, int column) {
