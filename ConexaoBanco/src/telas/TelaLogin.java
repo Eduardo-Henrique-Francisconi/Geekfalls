@@ -76,9 +76,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         Login.setBackground(new java.awt.Color(231, 229, 230));
         Login.setForeground(new java.awt.Color(231, 229, 230));
-        Login.setIcon(new javax.swing.ImageIcon("C:\\Users\\felip\\OneDrive\\Pictures\\Tela-login1.png")); // NOI18N
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\felip\\OneDrive\\Pictures\\Tela-login2.1.png")); // NOI18N
 
         jButton1.setText("Login");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,12 +105,14 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(Lembrar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(40, 40, 40))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Senha_escrever)))
+                            .addComponent(Senha_escrever)
+                            .addGap(36, 36, 36)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Logo)
                         .addGroup(layout.createSequentialGroup()
@@ -179,8 +178,10 @@ public class TelaLogin extends javax.swing.JFrame {
     // Validação do login e senha
     if (ValidarLogin.validarLogin(login, senha)) {
         // Criar e mostrar a segunda tela
-        Tela_Inicial telaInicial = new Tela_Inicial();
-        telaInicial.setVisible(true);
+        
+        // GereciadorDeTelas.setVisible(true);
+        GereciadorDeTelas gereciadorDeTelas = new GereciadorDeTelas();
+        gereciadorDeTelas.setVisible(true);
         dispose();
     } else {
         // Exibir mensagem de erro

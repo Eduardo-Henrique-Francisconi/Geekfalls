@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -220,9 +220,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextIdade">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Idade minima"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextIdadeActionPerformed"/>
       </Events>
@@ -233,9 +230,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextDescricao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextDescricaoActionPerformed"/>
       </Events>
@@ -246,9 +240,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextTempo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tempo de jogo"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextTempoActionPerformed"/>
       </Events>
@@ -259,9 +250,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextNumero">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Numero de jogadores"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNumeroActionPerformed"/>
       </Events>
@@ -272,17 +260,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextNome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nome"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextPreco">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextPrecoActionPerformed"/>
       </Events>
@@ -342,9 +324,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="jTextGenero">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Generos"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleAdd">
       <Properties>

@@ -15,11 +15,11 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
      */
     public GereciadorDeTelas() {
         initComponents();
-        Tela_InicialJpanel TI = new Tela_InicialJpanel();
-        TI.setSize(content.getSize());
-        TI.setLocation(0, 0);
+        MonitoramentoDetalhadoJpanel MD = new MonitoramentoDetalhadoJpanel();
+        MD.setSize(content.getSize());
+        MD.setLocation(0, 0);
         content.removeAll();
-        content.add(TI);
+        content.add(MD);
         content.revalidate();
         content.repaint();
         
@@ -37,9 +37,9 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
 
         content = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuTelaPrincipal = new javax.swing.JMenu();
         jMenuMonitoramentoDetalhado = new javax.swing.JMenu();
         jMenuEstoque = new javax.swing.JMenu();
+        jMenuCadastroFuncionario = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,14 +55,6 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 527, Short.MAX_VALUE)
         );
-
-        jMenuTelaPrincipal.setText("Tela Principal");
-        jMenuTelaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuTelaPrincipalMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenuTelaPrincipal);
 
         jMenuMonitoramentoDetalhado.setText("Monitoramento Detalhado");
         jMenuMonitoramentoDetalhado.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,6 +72,14 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenuEstoque);
 
+        jMenuCadastroFuncionario.setText("Cadastro Funcionário");
+        jMenuCadastroFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuCadastroFuncionarioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenuCadastroFuncionario);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,17 +95,6 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuTelaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuTelaPrincipalMouseClicked
-        // TODO add your handling code here:
-        Tela_InicialJpanel TI = new Tela_InicialJpanel();
-        TI.setSize(content.getSize());
-        TI.setLocation(0, 0);
-        content.removeAll();
-        content.add(TI);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_jMenuTelaPrincipalMouseClicked
 
     private void jMenuMonitoramentoDetalhadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuMonitoramentoDetalhadoMouseClicked
         // TODO add your handling code here:
@@ -129,6 +118,18 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }//GEN-LAST:event_jMenuEstoqueMouseClicked
+
+    private void jMenuCadastroFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuCadastroFuncionarioMouseClicked
+        // TODO add your handling code here:
+        Tela_Cadasto Func = new Tela_Cadasto();
+        Func.setSize(content.getSize());
+        Func.setLocation(0, 0);
+        content.removeAll();
+        content.add(Func);
+        content.revalidate();
+        content.repaint();
+        
+    }//GEN-LAST:event_jMenuCadastroFuncionarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -168,8 +169,8 @@ public class GereciadorDeTelas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel content;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuCadastroFuncionario;
     private javax.swing.JMenu jMenuEstoque;
     private javax.swing.JMenu jMenuMonitoramentoDetalhado;
-    private javax.swing.JMenu jMenuTelaPrincipal;
     // End of variables declaration//GEN-END:variables
 }

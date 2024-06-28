@@ -4,14 +4,6 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenuTelaPrincipal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tela Principal"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuTelaPrincipalMouseClicked"/>
-          </Events>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuMonitoramentoDetalhado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Monitoramento Detalhado"/>
@@ -26,6 +18,14 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuEstoqueMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenuCadastroFuncionario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cadastro Funcion&#xe1;rio"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuCadastroFuncionarioMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>

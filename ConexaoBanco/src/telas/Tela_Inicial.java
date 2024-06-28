@@ -212,7 +212,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
 
     
         DefaultListModel<String> modelGenero = new DefaultListModel<>();
-    Object[][] dados = new Buscar().buscarJogos(null,0,null,null,null,null,null,null,1);
+    Object[][] dados = new Buscar().buscarJogos();
  
          // Define os nomes das colunas
          String[] colunas = {"Jogo", "Nome"}; // "ID_game", "ID_genre

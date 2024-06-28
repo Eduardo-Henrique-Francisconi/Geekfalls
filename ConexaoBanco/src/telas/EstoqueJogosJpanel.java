@@ -80,7 +80,6 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jLabel6.setText("Numero de jogadores:");
 
-        jTextIdade.setText("Idade minima");
         jTextIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIdadeActionPerformed(evt);
@@ -89,7 +88,6 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jLabel7.setText("Generos adicionados:");
 
-        jTextDescricao.setText("Descrição");
         jTextDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextDescricaoActionPerformed(evt);
@@ -98,7 +96,6 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jLabel8.setText("status:");
 
-        jTextTempo.setText("Tempo de jogo");
         jTextTempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextTempoActionPerformed(evt);
@@ -107,7 +104,6 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jLabel9.setText("ID");
 
-        jTextNumero.setText("Numero de jogadores");
         jTextNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNumeroActionPerformed(evt);
@@ -116,14 +112,12 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jLabel10.setText("Tempo de jogo:");
 
-        jTextNome.setText("Nome");
         jTextNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNomeActionPerformed(evt);
             }
         });
 
-        jTextPreco.setText("Preço");
         jTextPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextPrecoActionPerformed(evt);
@@ -163,8 +157,6 @@ public class EstoqueJogosJpanel extends javax.swing.JPanel {
 
         jListGenero.setModel(modelGenero);
         jScrollPane3.setViewportView(jListGenero);
-
-        jTextGenero.setText("Generos");
 
         jToggleAdd.setText("Add");
         jToggleAdd.addMouseListener(new java.awt.event.MouseAdapter() {
